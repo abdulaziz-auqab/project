@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Abdulaziz Al-Harbi — Change management, operations, and the systems that run them</title>
+<meta name="description" content="Administrative development specialist at the Center for Educational Leadership Development, NIEPD. Change management across 16 regional education departments, and the internal systems built to run it.">
+<meta property="og:title" content="Abdulaziz Al-Harbi — Change management and operations">
+<meta property="og:description" content="Change management across 16 regional education departments, and the systems built to run it.">
+<meta property="og:type" content="profile">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#11161C; --ink-2:#39424E; --ink-3:#6C7683;
+  --paper:#FAFAF9; --card:#FFFFFF; --rule:#DFDFDA; --rule-2:#EDEDE9;
+  --accent:#0B5F57; --accent-soft:#E8F1EF;
+  --maxw:1120px; --gutter:clamp(20px,5vw,48px);
+  --sans:"IBM Plex Sans","Segoe UI",system-ui,sans-serif;
+  --serif:Newsreader,Georgia,serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16.5px;line-height:1.7;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:500;line-height:1.2;margin:0;letter-spacing:-.01em}
+p{margin:0 0 1.1em}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline;text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+img{max-width:100%;display:block}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.88em;background:#F1F1EC;border:1px solid var(--rule-2);padding:1px 5px}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--gutter)}
+.skip{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip:focus{position:fixed;left:8px;top:8px;width:auto;height:auto;clip:auto;background:var(--ink);color:#fff;padding:10px 16px;z-index:100}
+
+/* ---------- bilingual ---------- */
+html[data-lang="en"] [data-l="ar"]{display:none}
+html[data-lang="ar"] [data-l="en"]{display:none}
+html[data-lang="ar"]{direction:rtl}
+html[data-lang="ar"] body{font-family:"IBM Plex Sans Arabic",var(--sans);line-height:1.9}
+html[data-lang="ar"] h1,html[data-lang="ar"] h2,html[data-lang="ar"] h3{font-family:"IBM Plex Sans Arabic",var(--sans);font-weight:600;letter-spacing:0;line-height:1.35}
+html[data-lang="ar"] .block h4{font-family:"IBM Plex Sans Arabic",var(--sans);letter-spacing:0;text-transform:none;font-size:.9rem}
+html[data-lang="ar"] th,html[data-lang="ar"] td{text-align:right}
+html[data-lang="ar"] thead th{letter-spacing:0;text-transform:none}
+html[data-lang="ar"] ul{padding-left:0;padding-right:1.1em}
+html[data-lang="ar"] figcaption{padding-left:0;padding-right:12px;border-left:0;border-right:2px solid var(--accent)}
+html[data-lang="ar"] .proof div{border-left:0;border-right:1px solid var(--rule-2)}
+html[data-lang="ar"] .proof div:first-child{border-right:none;padding-right:0;padding-left:24px}
+html[data-lang="ar"] .hero .now{font-size:.9rem}
+html[data-lang="ar"] .shead .no{letter-spacing:0}
+html[data-lang="ar"] .caps .n,html[data-lang="ar"] .principles .n{font-family:var(--serif)}
+
+/* ---------- nav ---------- */
+.nav{position:sticky;top:0;z-index:50;background:rgba(250,250,249,.93);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;height:58px}
+.nav .me{font-family:var(--serif);font-size:1.05rem;color:var(--ink);white-space:nowrap}
+html[data-lang="ar"] .nav .me{font-family:"IBM Plex Sans Arabic",var(--sans);font-weight:600}
+.nav ul{display:flex;gap:24px;list-style:none;margin:0;padding:0;font-size:.88rem}
+.nav ul a{color:var(--ink-2)}
+.nav ul a[aria-current="true"]{color:var(--ink);box-shadow:inset 0 -2px 0 var(--accent)}
+.nav .right{display:flex;align-items:center;gap:10px}
+.nav .cta,.langbtn{border:1px solid var(--ink);color:var(--ink);padding:6px 13px;font-size:.85rem;white-space:nowrap;background:transparent;cursor:pointer;font-family:inherit}
+.nav .cta:hover,.langbtn:hover{background:var(--ink);color:#fff;text-decoration:none}
+@media (max-width:860px){.nav ul{display:none}}
+
+/* ---------- hero ---------- */
+.hero{padding:clamp(52px,9vw,100px) 0 0}
+.hero .top{display:grid;grid-template-columns:minmax(0,1fr) 230px;gap:56px;align-items:start}
+.hero h1{font-size:clamp(2.2rem,5.2vw,3.8rem);max-width:18ch;font-weight:500}
+.hero .sub{margin-top:22px;font-size:clamp(1.02rem,1.6vw,1.16rem);color:var(--ink-2);max-width:62ch}
+.hero .actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
+.hero .now{border-top:1px solid var(--ink);padding-top:14px;font-size:.86rem;margin:0}
+.hero .now dt{font-size:.7rem;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-3);margin-bottom:3px}
+html[data-lang="ar"] .hero .now dt{letter-spacing:0;text-transform:none;font-size:.76rem}
+.hero .now dd{margin:0 0 14px;color:var(--ink-2)}
+@media (max-width:980px){.hero .top{grid-template-columns:1fr;gap:34px}.hero .now{max-width:430px}}
+.btn{display:inline-block;padding:11px 20px;font-size:.92rem;border:1px solid var(--ink);background:var(--ink);color:#fff}
+.btn:hover{background:#000;text-decoration:none}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:#fff}
+
+.proof{display:grid;grid-template-columns:repeat(4,1fr);margin-top:clamp(42px,7vw,70px);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.proof div{padding:22px 24px 20px;border-left:1px solid var(--rule-2)}
+.proof div:first-child{border-left:none;padding-left:0}
+.proof b{display:block;font-family:var(--serif);font-size:1.9rem;font-weight:500;font-variant-numeric:tabular-nums;line-height:1.15}
+.proof .lbl{font-size:.82rem;color:var(--ink-3);display:block;margin-top:4px}
+@media (max-width:760px){
+  .proof{grid-template-columns:1fr 1fr}
+  .proof div{padding:16px 0 16px 18px}
+  .proof div:nth-child(odd){border-left:none;padding-left:0}
+  .proof div:nth-child(n+3){border-top:1px solid var(--rule-2)}
+  html[data-lang="ar"] .proof div:nth-child(odd){border-right:none;padding-right:0;padding-left:18px}
+}
+
+/* ---------- sections ---------- */
+section{padding:clamp(60px,9vw,104px) 0 0}
+.shead{display:flex;align-items:baseline;gap:18px;padding-bottom:10px;border-bottom:1px solid var(--ink);margin-bottom:clamp(30px,5vw,50px)}
+.shead .no{font-size:.78rem;color:var(--ink-3);font-variant-numeric:tabular-nums;letter-spacing:.06em}
+.shead h2{font-size:clamp(1.5rem,2.6vw,2rem)}
+
+.caps,.principles{display:grid;gap:clamp(24px,4vw,44px)}
+.caps{grid-template-columns:repeat(3,1fr)}
+.principles{grid-template-columns:repeat(2,1fr)}
+.caps h3,.principles h3{font-size:1.16rem;margin-bottom:8px}
+.caps p,.principles p{color:var(--ink-2);font-size:.95rem;margin:0}
+.caps .n{font-size:.76rem;color:var(--accent);letter-spacing:.08em;display:block;margin-bottom:10px}
+.principles .n{font-family:var(--serif);font-size:1.5rem;color:var(--accent);display:block;line-height:1;margin-bottom:10px}
+@media (max-width:820px){.caps{grid-template-columns:1fr;gap:30px}.principles{grid-template-columns:1fr;gap:28px}}
+
+/* ---------- case ---------- */
+.case{border-top:1px solid var(--rule);padding-top:clamp(36px,5vw,54px);margin-top:clamp(46px,6vw,74px)}
+.case:first-of-type{border-top:none;margin-top:0;padding-top:0}
+.case h3{font-size:clamp(1.6rem,3vw,2.15rem);max-width:24ch}
+.case .kicker{font-size:.8rem;color:var(--ink-3);letter-spacing:.06em;margin-bottom:10px}
+.case .summary{font-size:1.05rem;color:var(--ink-2);max-width:64ch;margin-top:16px}
+.case .cols{display:grid;grid-template-columns:minmax(0,1fr) 250px;gap:clamp(30px,5vw,58px);align-items:start;margin-top:clamp(28px,4vw,44px)}
+@media (max-width:900px){.case .cols{grid-template-columns:1fr;gap:28px}}
+.block{margin-bottom:34px}
+.block h4{font-size:.82rem;font-family:var(--sans);font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-3);margin-bottom:10px}
+.block p{max-width:66ch;color:var(--ink-2)}
+.block p strong{color:var(--ink);font-weight:600}
+.block ul{max-width:66ch;color:var(--ink-2);padding-left:1.1em;margin:0 0 1em}
+.block li{margin-bottom:.4em}
+
+.factfile{border:1px solid var(--rule);background:var(--card);padding:20px 22px;position:sticky;top:78px}
+.factfile dl{margin:0;font-size:.9rem}
+.factfile dt{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin-bottom:3px}
+html[data-lang="ar"] .factfile dt{letter-spacing:0;text-transform:none;font-size:.78rem}
+.factfile dd{margin:0 0 15px;color:var(--ink)}
+.tags{display:flex;flex-wrap:wrap;gap:5px;list-style:none;padding:0;margin:0}
+.tags li{font-size:.74rem;border:1px solid var(--rule);background:#F7F7F4;color:var(--ink-2);padding:2px 7px}
+@media (max-width:900px){.factfile{position:static}}
+
+figure{margin:0 0 34px}
+figure img{border:1px solid var(--rule);background:#fff}
+figcaption{font-size:.82rem;color:var(--ink-3);margin-top:9px;padding-left:12px;border-left:2px solid var(--accent);max-width:70ch}
+
+.tw{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-bottom:14px}
+.case .cols>div{min-width:0}
+table{border-collapse:collapse;width:100%;font-size:.92rem;background:var(--card);margin:4px 0 14px}
+th,td{border:1px solid var(--rule-2);padding:9px 13px;text-align:left;vertical-align:top}
+thead th{background:#F2F2EE;font-weight:600;font-size:.8rem;letter-spacing:.04em;color:var(--ink-2);text-transform:uppercase}
+.win{color:var(--accent);font-weight:500}
+
+.demo{display:none;border:1px solid var(--accent);background:var(--accent-soft);padding:22px 24px;margin-top:30px}
+.demo.on{display:block}
+.demo h4{font-family:var(--serif);font-size:1.2rem;text-transform:none;letter-spacing:0;color:var(--ink);margin-bottom:6px}
+.demo p{font-size:.92rem;color:var(--ink-2);margin:0 0 14px;max-width:60ch}
+
+.role{display:grid;grid-template-columns:200px minmax(0,1fr);gap:clamp(20px,4vw,48px);padding:26px 0;border-top:1px solid var(--rule-2)}
+.role:first-of-type{border-top:none;padding-top:0}
+.role .when{font-size:.86rem;color:var(--ink-3)}
+.role h3{font-size:1.2rem}
+.role .org{font-size:.94rem;color:var(--ink-2);margin:2px 0 12px}
+.role ul{margin:0;padding-left:1.1em;color:var(--ink-2);font-size:.95rem;max-width:66ch}
+.role li{margin-bottom:.4em}
+@media (max-width:760px){.role{grid-template-columns:1fr;gap:8px}}
+
+.contact{background:var(--ink);color:#EDEFF1;margin-top:clamp(70px,10vw,116px);padding:clamp(54px,8vw,86px) 0}
+.contact h2{color:#fff;font-size:clamp(1.7rem,3.4vw,2.3rem);max-width:22ch}
+.contact p{color:#AEB6C0;max-width:58ch;margin-top:16px}
+.contact a{color:#7FD3C6}
+.contact .links{display:flex;flex-wrap:wrap;gap:12px 30px;margin-top:26px;font-size:1rem}
+.contact small{display:block;margin-top:40px;color:#79828D;font-size:.79rem;line-height:1.7;max-width:74ch}
+
+@media print{.nav,.demo,.contact .links{display:none}body{background:#fff;font-size:11pt}.contact{background:#fff;color:#000;margin-top:24px}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main"><span data-l="en">Skip to content</span><span data-l="ar">تخطَّ إلى المحتوى</span></a>
+
+<nav class="nav" aria-label="Primary">
+  <div class="wrap">
+    <a class="me" href="#top"><span data-l="en">Abdulaziz Al-Harbi</span><span data-l="ar">عبدالعزيز الحربي</span></a>
+    <ul>
+      <li><a href="#work"><span data-l="en">Work</span><span data-l="ar">الأعمال</span></a></li>
+      <li><a href="#approach"><span data-l="en">Approach</span><span data-l="ar">المنهج</span></a></li>
+      <li><a href="#experience"><span data-l="en">Experience</span><span data-l="ar">الخبرة</span></a></li>
+      <li><a href="#contact"><span data-l="en">Contact</span><span data-l="ar">تواصل</span></a></li>
+    </ul>
+    <div class="right">
+      <button class="langbtn" id="langBtn" type="button" aria-label="Switch language"><span data-l="en">العربية</span><span data-l="ar">English</span></button>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="top">
+      <div>
+        <h1><span data-l="en">Change programs, and the systems that run them.</span><span data-l="ar">برامج التغيير، والأنظمة التي تُشغّلها.</span></h1>
+        <p class="sub"><span data-l="en">I'm an administrative development specialist at the Center for Educational Leadership Development, part of Saudi Arabia's National Institute for Educational Professional Development (NIEPD). I work across the Kingdom's 16 regional education departments — and when the work needs software that doesn't exist, I build it.</span><span data-l="ar">أخصائي تطوير إداري في مركز تطوير القيادات التعليمية بالمعهد الوطني للتطوير المهني التعليمي، أعمل مع ست عشرة إدارة تعليم في مناطق المملكة. أصمّم العمليات، وحين يحتاج العمل أداة غير موجودة أبنيها.</span></p>
+        <div class="actions">
+          <a class="btn" href="#work"><span data-l="en">See selected work</span><span data-l="ar">اطّلع على الأعمال</span></a>
+          <a class="btn ghost" href="https://www.linkedin.com/">LinkedIn</a>
+        </div>
+      </div>
+      <dl class="now"><dt><span data-l="en">Currently</span><span data-l="ar">الدور الحالي</span></dt><dd><span data-l="en">Administrative Development Specialist, Center for Educational Leadership Development — NIEPD</span><span data-l="ar">أخصائي تطوير إداري — مركز تطوير القيادات التعليمية، المعهد الوطني للتطوير المهني التعليمي</span></dd>
+<dt><span data-l="en">Based in</span><span data-l="ar">المقر</span></dt><dd><span data-l="en">Riyadh, Saudi Arabia</span><span data-l="ar">الرياض، المملكة العربية السعودية</span></dd>
+<dt><span data-l="en">Focus</span><span data-l="ar">مجالات العمل</span></dt><dd><span data-l="en">Change management · Process automation · Analysis and decision support</span><span data-l="ar">إدارة التغيير، وأتمتة العمليات، والتحليل ودعم القرار</span></dd>
+<dt><span data-l="en">Languages</span><span data-l="ar">اللغات</span></dt><dd><span data-l="en">Arabic (native) · English (professional)</span><span data-l="ar">العربية (الأم)، والإنجليزية (مستوى احترافي)</span></dd></dl>
+    </div>
+    <div class="proof"><div><b><span data-l="en">16</span><span data-l="ar">١٦</span></b><span class="lbl"><span data-l="en">regional education departments</span><span data-l="ar">إدارة تعليم في المناطق</span></span></div>
+<div><b><span data-l="en">6</span><span data-l="ar">٦</span></b><span class="lbl"><span data-l="en">leadership levels assessed in each</span><span data-l="ar">مستويات قيادية داخل كل إدارة</span></span></div>
+<div><b><span data-l="en">~4,000</span><span data-l="ar">٤٬٠٠٠</span></b><span class="lbl"><span data-l="en">records analyzed and segmented</span><span data-l="ar">سجلاً حُلّل وفُرز للتواصل</span></span></div>
+<div><b><span data-l="en">120+</span><span data-l="ar">١٢٠</span></b><span class="lbl"><span data-l="en">leaders seated at the first Jusoor Forum</span><span data-l="ar">قياديًا فأكثر في ملتقى جسور الأول</span></span></div></div>
+  </div>
+</header>
+
+<section id="capabilities">
+  <div class="wrap">
+    <div class="shead"><span class="no">01</span><h2><span data-l="en">What I do</span><span data-l="ar">مجالات العمل</span></h2></div>
+    <div class="caps"><div><span class="n">01</span><h3 data-l="en">Change management and program operations</h3><h3 data-l="ar">إدارة التغيير وتشغيل البرامج</h3><p data-l="en">ADKAR assessment across organizational units, stakeholder and resistance analysis, communication waves, adoption measurement, and the executive reporting that keeps leadership decisions grounded in current data.</p>
+<p data-l="ar">تقييم الوحدات وفق نموذج ADKAR، وتحليل أصحاب المصلحة وإدارة المقاومة، وتشغيل الموجات الاتصالية، وقياس التبنّي، والتقارير التنفيذية التي تجعل قرار القيادة مبنيًا على وضع اليوم لا على انطباع.</p></div>
+<div><span class="n">02</span><h3 data-l="en">Process automation and internal tooling</h3><h3 data-l="ar">أتمتة العمليات وبناء الأدوات الداخلية</h3><p data-l="en">Turning repeated manual work into tested software: official correspondence generated from an approved protocol guide, leadership databases, event operations — built for environments where nothing can be deployed to a server.</p>
+<p data-l="ar">تحويل العمل اليدوي المتكرر إلى برمجيات مختبَرة: خطابات رسمية تُصدر وفق دليل المخاطبات المعتمد، وقواعد بيانات قيادية، وتشغيل الفعاليات — في بيئة لا تسمح بنشر أي خدمة على خادم.</p></div>
+<div><span class="n">03</span><h3 data-l="en">Analysis and decision support</h3><h3 data-l="ar">التحليل ودعم القرار</h3><p data-l="en">Segmentation and campaign targeting, statistical analysis in SPSS, feasibility studies with full financial modeling, and performance measured before and after a change rather than asserted.</p>
+<p data-l="ar">فرز البيانات واستهداف حملات التواصل، والتحليل الإحصائي بـ SPSS، ودراسات الجدوى بنمذجة مالية كاملة، وأداء يُقاس قبل التغيير وبعده لا يُدّعى.</p></div></div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <div class="shead"><span class="no">02</span><h2><span data-l="en">Selected work</span><span data-l="ar">الأعمال المختارة</span></h2></div>
+
+    <article class="case" id="adkar">
+      <p class="kicker"><span data-l="en">Case study 01</span><span data-l="ar">دراسة حالة ٠١</span></p>
+      <h3><span data-l="en">ADKAR Change Management Platform</span><span data-l="ar">منصة إدارة التغيير ADKAR</span></h3>
+      <p class="summary"><span data-l="en">A single-file application that runs a national change program offline for NIEPD's Center for Educational Leadership Development — assessing 16 regional education departments across six leadership levels, locating the stage that blocks each one, and issuing 16 personalized official letters in under two seconds.</span><span data-l="ar">تطبيق في ملف واحد يدير برنامج تغيير وطنيًا دون اتصال لمركز تطوير القيادات التعليمية بالمعهد الوطني للتطوير المهني التعليمي: يقيّم ست عشرة إدارة تعليم على ستة مستويات قيادية، ويحدّد المرحلة التي تعطّل كل إدارة، ويُصدر ١٦ خطابًا رسميًا مخصَّصًا في أقل من ثانيتين.</span></p>
+      <div class="cols">
+        <div>
+<div class="block">
+<h4 data-l="en">Context</h4><h4 data-l="ar">المشكلة</h4>
+<p data-l="en">At the Center for Educational Leadership Development, an eight-person team leads a leadership change program spanning the Kingdom's 16 regional education departments and the schools under them. The work was tracked in Excel and Word files inside a shared folder. Nobody could see where each department stood, or which stage of the change was holding it back. Official letters to department heads were rewritten sixteen times by hand, with the form of address changing according to each recipient's rank.</p>
+<p data-l="ar">في مركز تطوير القيادات التعليمية يقود فريق من ثمانية أشخاص برنامج تغيير يشمل ست عشرة إدارة تعليم في مناطق المملكة والمدارس التابعة لها. كان العمل يُدار بملفات Excel وWord في مجلد مشترك، فلا يظهر أين تقف كل إدارة ولا أي مرحلة تعطّل تقدّمها. أما الخطابات الرسمية فكانت تُكتب ست عشرة مرة يدويًا، مع اختلاف صيغة المخاطبة حسب رتبة كل مخاطَب.</p>
+</div>
+<div class="block">
+<h4 data-l="en">Constraint</h4><h4 data-l="ar">القيد</h4>
+<p data-l="en">The environment permits no deployed service — no server, no database, no cloud. Team members work on different machines through a shared storage folder, and they don't all update software at the same time.</p>
+<p data-l="ar">البيئة الحكومية لا تسمح بنشر خدمة: لا خادم ولا قاعدة بيانات ولا خدمة سحابية. وأعضاء الفريق يعملون على أجهزة مختلفة عبر مجلد تخزين مشترك، ولا يحدّثون التطبيق في وقت واحد.</p>
+</div>
+<div class="block">
+<h4 data-l="en">Approach</h4><h4 data-l="ar">القرار المعماري</h4>
+<p data-l="en">I built the architecture around that constraint instead of trying to escape it. The result is <strong>one 1.55 MB file</strong> that opens by double-click and runs with no network. State stays local. The team syncs through JSON files in the shared folder, merged cell by cell on timestamp. When two values genuinely conflict — different values, valid stamps, inside the time window, different authors — the platform shows both and asks the user rather than silently picking one. Every schema change ships with a tested migration and a guarded rule: an older copy of the platform must still be able to read what a newer copy writes.</p>
+<p data-l="ar">بنيتُ المعمارية حول هذا القيد بدل الالتفاف عليه. النتيجة <strong>ملف واحد بحجم ١٫٥٥ ميغابايت</strong> يُفتح بالنقر المزدوج ويعمل دون اتصال. الحالة محلية، والفريق يتزامن عبر ملفات JSON في المجلد المشترك بالدمج بالختم الزمني لكل خلية. وعند تعارض حقيقي — قيمتان مختلفتان، وختمان صالحان، وفارق زمني داخل النافذة، وكاتبان مختلفان — يعرض التطبيق النسختين على المستخدم ولا يحسم تلقائيًا. وكل تغيير في المخطط يصحبه ترحيل مختبَر وشرط محروس: أن تبقى النسخة القديمة قادرة على قراءة ما تكتبه النسخة الجديدة.</p>
+</div>
+<figure>
+<img src="assets/stages.jpg" data-alt-en="The five ADKAR stages as scored in the platform" data-alt-ar="المراحل الخمس كما تعرضها المنصة" alt="The five ADKAR stages as scored in the platform" loading="lazy">
+<figcaption data-l="en">The five stages as the platform reports them: percentage of the target reached, mean score out of five, and how many departments sit below the pass threshold on that stage.</figcaption><figcaption data-l="ar">المراحل الخمس كما تعرضها المنصة: نسبة بلوغ المستهدف، ومتوسط الدرجة من خمس، وعدد الإدارات دون حد الاجتياز في كل مرحلة.</figcaption>
+</figure>
+<div class="block">
+<h4 data-l="en">The model, as implemented</h4><h4 data-l="ar">النموذج كما طُبِّق</h4>
+<p data-l="en">The engine is a governed artifact, not a set of loose settings: it carries a version, an approval date and an approver, and it validates any file loaded into it. The five stages are fixed in order and meaning — the platform refuses a configuration with a different number of stages, on the grounds that <strong>ADKAR is the model, and five is not a preference</strong>. Everything around them is configurable: the scale, the pass threshold, escalation rules and evidence requirements.</p>
+<p data-l="ar">المحرّك وثيقة محكومة لا مجموعة إعدادات: له إصدار وتاريخ اعتماد وجهة اعتماد، ويفحص أي ملف يُحمَّل إليه. والمراحل الخمس ثابتة الترتيب والمعنى — ترفض المنصة أي تهيئة بعدد مراحل مختلف، لأن <strong>ADKAR هو النموذج، وعددها ليس خيارًا</strong>. وما عدا ذلك قابل للتهيئة: المقياس، وحد العبور، وقواعد التصعيد، واشتراط الشواهد.</p><div class="tw" data-l="en"><table><thead><tr><th scope="col">Stage</th><th scope="col">The question it answers</th><th scope="col">What is being judged</th><th scope="col">Escalates</th><th scope="col">Evidence</th></tr></thead><tbody><tr><td><strong>Awareness</strong> · الوعي</td><td>Why now?</td><td>Whether stakeholders understand the reason for the change</td><td>—</td><td>—</td></tr><tr><td><strong>Desire</strong> · الرغبة</td><td>What is in it for me?</td><td>Commitment and motivation, not compliance</td><td><span class="win">Yes</span></td><td>—</td></tr><tr><td><strong>Knowledge</strong> · المعرفة</td><td>How do I change?</td><td>Whether they know how to run the new practice</td><td>—</td><td>—</td></tr><tr><td><strong>Ability</strong> · القدرة</td><td>Can I actually do it?</td><td>Observed behaviour in the field, not intention</td><td><span class="win">Yes</span></td><td><span class="win">Yes</span></td></tr><tr><td><strong>Reinforcement</strong> · التعزيز</td><td>How do we sustain it?</td><td>Whether the practice has entered the routine</td><td>—</td><td><span class="win">Yes</span></td></tr></tbody></table></div><div class="tw" data-l="ar"><table><thead><tr><th scope="col">المرحلة</th><th scope="col">السؤال الذي تجيب عنه</th><th scope="col">ما الذي يُحكم عليه</th><th scope="col">تُصعَّد</th><th scope="col">تشترط شاهدًا</th></tr></thead><tbody><tr><td><strong>الوعي</strong></td><td>لماذا الآن؟</td><td>هل يدرك أصحاب المصلحة سبب الحاجة إلى التغيير</td><td>—</td><td>—</td></tr><tr><td><strong>الرغبة</strong></td><td>ما الفائدة لي؟</td><td>الالتزام والدافعية لا مجرد الاستجابة</td><td><span class="win">نعم</span></td><td>—</td></tr><tr><td><strong>المعرفة</strong></td><td>كيف أتغيّر؟</td><td>هل يعرف كيف ينفّذ الممارسة الجديدة</td><td>—</td><td>—</td></tr><tr><td><strong>القدرة</strong></td><td>هل أستطيع التطبيق؟</td><td>السلوك الملاحَظ في الميدان لا النية</td><td><span class="win">نعم</span></td><td><span class="win">نعم</span></td></tr><tr><td><strong>التعزيز</strong></td><td>كيف نستمر؟</td><td>هل دخلت الممارسة في الروتين</td><td>—</td><td><span class="win">نعم</span></td></tr></tbody></table></div><p data-l="en">Scoring runs 1 to 5 with 3 as the pass mark, and every stage carries written anchors so that two assessors reach the same number. For Ability: <em>1 — has neither the time, the authority nor the tool; 3 — implements with visible effort and probable delay; 5 — implements within normal working hours without exceptional burden</em>, evidenced by repeated on-time delivery with no reminder from us.</p>
+<p data-l="ar">المقياس من ١ إلى ٥ وحد الاجتياز ٣، ولكل مرحلة شواهد مكتوبة تجعل مقيِّمَين يصلان إلى الرقم نفسه. مثال القدرة: <em>١ — لا يملك وقتًا ولا صلاحية ولا أداة؛ ٣ — ينفّذ بجهد ظاهر وتأخر محتمل؛ ٥ — ينفّذ ضمن الوقت المعتاد دون عبء استثنائي</em>، والدليل إنجاز متكرر ضمن المواعيد دون تذكير منّا.</p>
+</div>
+<div class="block">
+<h4 data-l="en">The rule the whole platform obeys</h4><h4 data-l="ar">القاعدة التي تحكم المنصة كلها</h4>
+<p data-l="en"><strong>The first stage scoring below the threshold is the blocking point, and it is the only one treated.</strong> A department strong on Awareness and weak on Ability does not get more awareness campaigns. Every dashboard, every report and every recommended action derives from that one rule — which is why the heatmap below marks a single cell per row rather than colouring everything red.</p>
+<p data-l="ar"><strong>أول مرحلة تقل درجتها عن الحد هي نقطة الانسداد، وهي وحدها التي تُعالَج.</strong> فالإدارة القوية في الوعي والضعيفة في القدرة لا تُرسَل لها حملة وعي جديدة. وكل لوحة وكل تقرير وكل إجراء مقترح في المنصة مشتق من هذه القاعدة — ولذلك تُعلِّم الخريطة الحرارية خلية واحدة في كل صف بدل أن تصبغ الصف كله.</p>
+</div>
+<figure>
+<img src="assets/heatmap.jpg" data-alt-en="Heatmap of 16 education departments against the five ADKAR stages" data-alt-ar="خريطة حرارية لست عشرة إدارة تعليم مقابل المراحل الخمس" alt="Heatmap of 16 education departments against the five ADKAR stages" loading="lazy">
+<figcaption data-l="en">Departments against stages, ordered by what deserves intervention first — overdue escalations before frequent ones, and unassessed units last, because unassessed means unknown rather than bad. The outlined cell in each row is the blocking point; the right-hand column names it.</figcaption><figcaption data-l="ar">الإدارات مقابل المراحل، مرتّبة بما يستحق التدخل أولًا: تجاوز المهلة قبل كثرة التصعيد، وغير المقيَّم آخرًا لأنه مجهول لا سيّئ. والخلية المحاطة في كل صف هي نقطة الانسداد، والعمود الأخير يسمّيها.</figcaption>
+</figure>
+<div class="block">
+<h4 data-l="en">Calibration: the part that makes the numbers mean anything</h4><h4 data-l="ar">المعايرة: ما يجعل للأرقام معنى</h4>
+<p data-l="en">An assessment scale is worthless if two people reading the same department produce different numbers. Six calibration rules ship with the engine and appear beside the scoring table:</p>
+<p data-l="ar">المقياس بلا قيمة إن أعطى شخصان للإدارة نفسها رقمين مختلفين. ست قواعد معايرة تأتي مع المحرّك وتظهر بجوار جدول التقييم:</p><ul data-l="en"><li>The first round is scored collectively in one session — the aim is convergent judgement, not speed of completion.</li><li>A score rests on concrete evidence, not impression. With no evidence, the score is 1 or 2 — never 3.</li><li>No 4 or 5 for a stage that has not been through at least one full cycle.</li><li>The department is assessed as a system, not a person; individual names appear only where operationally necessary.</li><li>Any score below 3 on Desire or Ability enters the escalation log within three working days.</li><li>Adoption instruments — surveys, focus groups, field observation, dashboards — are evidence for the five stages, never substitutes for them.</li></ul><ul data-l="ar"><li>الجولة الأولى تُقيَّم جماعيًا في جلسة واحدة — الهدف تقارب الأحكام لا سرعة الإنجاز.</li><li>الدرجة تُبنى على دليل ملموس لا على انطباع. وإن لم يوجد دليل فالدرجة ١ أو ٢، لا ٣.</li><li>لا تُمنح درجة ٤ أو ٥ لمرحلة لم تمر عليها دورة كاملة واحدة على الأقل.</li><li>التقييم للإدارة كمنظومة لا لشخص بعينه، والأسماء تُذكر عند الضرورة التشغيلية فقط.</li><li>أي تقييم يقل عن ٣ في الرغبة أو القدرة يُقيَّد في سجل التصعيد خلال ثلاثة أيام عمل.</li><li>أدوات قياس التبنّي — الاستبانات ومجموعات النقاش والملاحظة الميدانية واللوحات — أدلة على المراحل الخمس ولا تحل محلها.</li></ul><p data-l="en">The platform enforces the second rule rather than printing it: a passing score whose evidence reads only as a phone call or a routine reminder is rejected. Evidence has to carry something concrete — minutes, an attendance sheet, a field visit, a workshop, a plan, a report, an attachment or a link.</p>
+<p data-l="ar">والمنصة تُنفّذ القاعدة الثانية ولا تكتفي بعرضها: الدرجة المجتازة التي شاهدها مجرد مكالمة أو تذكير روتيني تُرفض. فالشاهد يجب أن يحمل أثرًا ملموسًا — محضرًا أو كشف حضور أو زيارة ميدانية أو ورشة أو خطة أو تقريرًا أو مرفقًا أو رابطًا.</p>
+</div>
+<div class="block">
+<h4 data-l="en">Who is assessed</h4><h4 data-l="ar">من الذي يُقيَّم</h4>
+<p data-l="en">Each department is scored across six leadership levels rather than as one block: the director general as decision-maker, the assistant director general who owns the file, the performance director and the school administration director on the delivery path, the quality control unit, and — deliberately included — the director of the general director's office, because that office is the real channel through which the decision-maker is reached. Sixteen departments across six levels and five stages is the grid the program is steered from.</p>
+<p data-l="ar">تُقيَّم كل إدارة على ستة مستويات قيادية لا ككتلة واحدة: مدير عام التعليم بوصفه صاحب القرار، ومساعده مالك الملف، ومدير الأداء ومدير الإدارة المدرسية على مسار التنفيذ، ووحدة ضبط الجودة، ثم — عن قصد — مدير مكتب مدير التعليم، لأن المكتب هو قناة الوصول الفعلية إلى صاحب القرار. ست عشرة إدارة في ستة مستويات في خمس مراحل هي الشبكة التي يُقاد منها البرنامج.</p>
+</div>
+<figure>
+<img src="assets/ksamap.jpg" data-alt-en="Map of Saudi Arabia with each education department shaded by its ADKAR engagement" data-alt-ar="خريطة المملكة وكل إدارة تعليم ملوّنة بحسب تفاعلها مع ADKAR" alt="Map of Saudi Arabia with each education department shaded by its ADKAR engagement" loading="lazy">
+<figcaption data-l="en">The same data on the map of the Kingdom. Four colouring modes — ADKAR engagement, greatest need, school performance and school coverage — turn a table of sixteen rows into a view a leadership team can read in a second and act on regionally.</figcaption><figcaption data-l="ar">البيانات نفسها على خريطة المملكة. أربعة أوضاع تلوين — تفاعل ADKAR، والأكثر احتياجًا، وأداء المدارس، وتغطية المدارس — تحوّل جدولًا من ستة عشر صفًا إلى مشهد تقرؤه القيادة في ثانية وتوجّه به التدخل إقليميًا.</figcaption>
+</figure>
+<figure>
+<img src="assets/kpis.jpg" data-alt-en="Executive KPI strip" data-alt-ar="شريط المؤشرات التنفيذية" alt="Executive KPI strip" loading="lazy">
+<figcaption data-l="en">The executive strip. Every figure opens on its own source — coverage, blocking points and the stage they cluster on, escalations still inside their window, sponsor health, adoption, and the trend between rounds. Nothing here is typed in by hand.</figcaption><figcaption data-l="ar">الشريط التنفيذي: كل رقم يفتح على مصدره — التغطية، ونقاط الانسداد والمرحلة التي تتجمع عندها، والتصعيدات داخل مهلتها، وصحة الرعاية، والتبنّي، والاتجاه بين الجولات. ولا يُكتب فيه رقم يدويًا.</figcaption>
+</figure>
+<div class="block">
+<h4 data-l="en">Official correspondence</h4><h4 data-l="ar">الخطابات الرسمية</h4>
+<p data-l="en">A letter is written once and issued in 16 copies. In each copy the salutation, honorific and title are derived from the recipient's rank and gender according to the approved government protocol guide — ten ranks in total. A checker applies 24 rules from that guide, cites the page number for each, and fixes a violation in one click. PDF, Word and HTML all render from a single renderer, so the preview matches what prints. <strong>From opening the file to a package of 16 Word letters and an issuance record: 1.9 seconds and four clicks.</strong> Fifty-two approved message templates sit behind it, indexed by ADKAR stage and by the leadership level being addressed.</p>
+<p data-l="ar">يُكتب الخطاب مرة واحدة فيخرج في ست عشرة نسخة، وتُشتق في كل نسخة عبارة المخاطبة والتكريم واللقب من رتبة المخاطَب وجنسه حسب دليل المخاطبات الرسمي المعتمد (عشر رتب). ويفحص المحتوى مدقق يطبّق ٢٤ قاعدة من الدليل مع أرقام صفحاتها، ويصلح المخالفة بنقرة. وتخرج ثلاثة مخرجات — PDF وWord وHTML — من راسم واحد، فتتطابق المعاينة مع المطبوع. <strong>من فتح الملف إلى حزمة فيها ١٦ خطاب Word وبيان صادر: ١٫٩ ثانية وأربع نقرات.</strong> وخلفها ٥٢ قالب رسالة معتمدًا مفهرسة بمرحلة ADKAR وبالمستوى القيادي المخاطَب.</p>
+</div>
+<div class="block">
+<h4 data-l="en">Results</h4><h4 data-l="ar">القياسات</h4>
+<div class="tw" data-l="en"><table><thead><tr><th scope="col">Measure</th><th scope="col">Before</th><th scope="col">After</th></tr></thead><tbody><tr><td>Issuing 16 official letters</td><td>Manual, one by one</td><td><span class="win">1.9 s · 4 clicks</span></td></tr><tr><td>Merging 20 team files × 200 units</td><td>3,905 ms</td><td><span class="win">258 ms (14.9× faster)</span></td></tr><tr><td>Rendering a 4,500-row table</td><td>49 ms</td><td><span class="win">1 ms (virtual scrolling)</span></td></tr><tr><td>Build size</td><td>4.62 MB</td><td><span class="win">1.46 MB</span></td></tr><tr><td>Load to interactive</td><td>117 ms</td><td><span class="win">114 ms</span></td></tr></tbody></table></div><div class="tw" data-l="ar"><table><thead><tr><th scope="col">المقياس</th><th scope="col">قبل</th><th scope="col">بعد</th></tr></thead><tbody><tr><td>إصدار ١٦ خطابًا رسميًا</td><td>يدويًا، واحدًا واحدًا</td><td><span class="win">١٫٩ ثانية · ٤ نقرات</span></td></tr><tr><td>دمج ٢٠ ملف فريق × ٢٠٠ وحدة</td><td>٣٬٩٠٥ مللي</td><td><span class="win">٢٥٨ مللي (أسرع ١٤٫٩ مرة)</span></td></tr><tr><td>عرض جدول من ٤٬٥٠٠ صف</td><td>٤٩ مللي</td><td><span class="win">١ مللي (تمرير افتراضي)</span></td></tr><tr><td>حجم البناء</td><td>٤٫٦٢ م.ب</td><td><span class="win">١٫٤٦ م.ب</span></td></tr><tr><td>التحميل حتى التفاعل</td><td>١١٧ مللي</td><td><span class="win">١١٤ مللي</span></td></tr></tbody></table></div>
+</div>
+<div class="block">
+<h4 data-l="en">Engineering quality</h4><h4 data-l="ar">الاختبار والجودة</h4>
+<ul data-l="en"><li>870 unit tests run against the built package itself inside <code>node:vm</code> — not against a copy of the source.</li><li>46 browser test files drive Chrome through the DevTools Protocol and measure what was actually rendered, in pixels: Word table column widths against the on-screen layout to within half a millimetre, the position of the honorific line, the selected font colour.</li><li>An 11-stage CI gate stops at the first failure: static analysis, injection scanner, build, structural checks, documentation build, unit tests, smoke tests, accessibility in both themes, a write-path inventory and a coverage report.</li><li>Acceptance matrices are generated from test names, so deleting a test that guards a rule stops the gate and names the rule that lost its guard.</li><li>Zero WCAG 2.1 AA violations in light and dark themes, on Chrome and Edge.</li></ul><ul data-l="ar"><li>٨٧٠ اختبار وحدة تعمل على الحزمة المبنية نفسها داخل <code>node:vm</code> لا على نسخة من المصدر.</li><li>٤٦ ملف اختبار في المتصفح تقود Chrome عبر بروتوكول DevTools وتقيس ما رُسم فعلًا بالبكسل: عرض أعمدة الجدول في Word مقابل اللوحة ضمن نصف مليمتر، وموضع عبارة التكريم، ولون الخط المختار.</li><li>بوابة CI من ١١ خطوة تتوقف عند أول فشل: فحص ساكن، وماسح حقن، وبناء، وفحوص بنيوية، وبناء الأدلة، واختبارات الوحدة، واختبارات الدخان، والوصولية في المظهرين، وجرد مسارات الكتابة، وتقرير التغطية.</li><li>مصفوفات القبول تُولَّد من أسماء الاختبارات، فحذف اختبار يحرس قاعدة يوقف البوابة ويسمّي القاعدة التي فقدت حارسها.</li><li>صفر مخالفة وصولية بمعيار WCAG 2.1 AA في المظهرين الفاتح والداكن، على Chrome وEdge.</li></ul>
+</div>
+<div class="block">
+<h4 data-l="en">Working at the binary level</h4><h4 data-l="ar">عمل على مستوى الملفات الثنائية</h4>
+<p data-l="en">The identity typeface the institute uses predates Arabic support in computing: 256 characters, no Arabic Unicode table, no shaping tables, and a separate character for every contextual form of a letter in the private use area. No program could set Arabic text with it — not even Word, which substituted it silently. I wrote a tool that reads the font file and rebuilds it: a Unicode table, shaping tables for initial, medial and final forms, and the lam-alef ligature, copying the glyph outlines byte for byte without touching them. The typeface now works in the platform, in Word, and anywhere else.</p>
+<p data-l="ar">خط الهوية المعتمد لدى المعهد كان من جيل سابق للعربية في الحاسب: ٢٥٦ محرفًا، بلا جدول يونيكود عربي وبلا جداول وصل، ولكل شكل من أشكال الحرف محرف مستقل في منطقة الاستعمال الخاص. فلم يكن يرسم به أي برنامج نصًا عربيًا، ولا Word الذي كان يستبدله صامتًا. كتبت أداة تقرأ ملف الخط وتعيد بناءه: جدول يونيكود، وجداول وصل للأشكال الأولية والوسطية والنهائية، ورباط لام-ألف، مع نسخ أشكال الحروف بايتًا بايتًا دون مساس. صار الخط يعمل في المنصة وفي Word وفي أي برنامج آخر.</p>
+</div>
+<div class="block">
+<h4 data-l="en">Built as a template, not a one-off</h4><h4 data-l="ar">نموذج يُهيَّأ لأي جهة</h4>
+<p data-l="en">No organization name, colour or logo appears in the source. Identity ships as a JSON package that imports and exports with a fingerprint, and a six-step setup wizard configures a new organization's units, levels and engine rules.</p>
+<p data-l="ar">لا يوجد اسم جهة ولا لون ولا شعار مكتوب في الشيفرة. الهوية كلها حزمة JSON تُستورد وتُصدَّر ببصمة، ومعالج تأسيس من ست خطوات يهيّئ وحدات الجهة الجديدة ومستوياتها وقواعد محرّكها.</p>
+</div>
+<div class="block">
+<h4 data-l="en">My role</h4><h4 data-l="ar">دوري في المشروع</h4>
+<p data-l="en">Product owner and developer. Developed with an AI coding agent (Claude Code); I owned the architecture, the domain modeling, the review and the decision record — 150 architecture decisions, each written with the alternative that was rejected and why.</p>
+<p data-l="ar">مالك المنتج والمطوّر. طُوّر بمساعدة وكيل برمجي (Claude Code)، وتوليت تصميم المعمارية ونمذجة المجال والمراجعة وتوثيق القرارات — ١٥٠ قرارًا معماريًا، كل واحد مكتوب مع البديل الذي استُبعد وسببه.</p>
+</div>
+          <div class="demo" id="demo-card">
+            <h4><span data-l="en">Try the demonstration build</span><span data-l="ar">جرّب النسخة التجريبية</span></h4>
+            <p><span data-l="en">A working copy of the platform loaded with demonstration data. No personal information of any kind.</span><span data-l="ar">نسخة عاملة من المنصة محمّلة ببيانات توضيحية، بلا أي بيانات شخصية.</span></p>
+            <a class="btn" href="demo/"><span data-l="en">Open the demo</span><span data-l="ar">افتح النسخة التجريبية</span></a>
+          </div>
+        </div>
+        <aside class="factfile">
+          <dl>
+            <dt><span data-l="en">Role</span><span data-l="ar">الدور</span></dt>
+            <dd><span data-l="en">Product owner &amp; developer</span><span data-l="ar">مالك المنتج والمطوّر</span></dd>
+            <dt><span data-l="en">Year</span><span data-l="ar">السنة</span></dt>
+            <dd><span data-l="en">2026</span><span data-l="ar">٢٠٢٦</span></dd>
+            <dt><span data-l="en">Scope</span><span data-l="ar">النطاق</span></dt>
+            <dd><span data-l="en">16 regional education departments · 6 leadership levels · 8-person program team</span><span data-l="ar">١٦ إدارة تعليم<br>٦ مستويات قيادية<br>فريق برنامج من ٨ أشخاص</span></dd>
+            <dt><span data-l="en">Scale</span><span data-l="ar">الحجم</span></dt>
+            <dd><span data-l="en">33,400 source lines · 870 unit tests · 46 browser tests · 150 architecture decisions · 0 accessibility violations</span><span data-l="ar">٣٣٬٤٠٠ سطر مصدر<br>٨٧٠ اختبار وحدة<br>٤٦ اختبار متصفح<br>١٥٠ قرارًا معماريًا<br>صفر مخالفة وصولية</span></dd>
+            <dt><span data-l="en">Built with</span><span data-l="ar">التقنيات</span></dt>
+            <dd><ul class="tags"><li>JavaScript (ES2022)</li><li>Canvas 2D</li><li>SVG</li><li>OOXML (docx)</li><li>JSON Schema</li><li>TrueType / GSUB</li><li>Web Crypto</li><li>File System Access</li><li>node:test</li><li>node:vm</li><li>DevTools Protocol</li><li>WCAG 2.1 AA</li><li>RTL / i18n</li></ul></dd>
+            <dt><span data-l="en">No runtime dependencies</span><span data-l="ar">بلا اعتماديات وقت التشغيل</span></dt>
+            <dd><span data-l="en">The network is blocked in this environment, so the project includes tools normally pulled from libraries: an Excel writer, a ZIP generator, a Word generator, a PDF renderer, a Markdown converter, a barcode generator and a TrueType font converter.</span><span data-l="ar">البيئة تمنع الاتصال بالشبكة، فكُتبت في المشروع أدوات تُجلب عادة من مكتبات جاهزة: كاتب Excel، ومولّد ZIP، ومولّد Word، وراسم PDF، ومحوّل Markdown، ومولّد الباركود، ومحوّل خطوط TrueType.</span></dd>
+          </dl>
+        </aside>
+      </div>
+    </article>
+
+    <article class="case" id="seating">
+      <p class="kicker"><span data-l="en">Case study 02</span><span data-l="ar">دراسة حالة ٠٢</span></p>
+      <h3><span data-l="en">Seating System — Jusoor Forum</span><span data-l="ar">نظام الإجلاس — ملتقى جسور</span></h3>
+      <p class="summary"><span data-l="en">A browser tool that turns one overhead photograph of a hall into a working seating model — detecting every seat, assigning attendees, and printing the chart and the name cards.</span><span data-l="ar">أداة في المتصفح تحوّل صورة علوية واحدة للقاعة إلى نموذج إجلاس يعمل: تكشف كل مقعد، وتسند الحضور، وتطبع المخطط وبطاقات الأسماء.</span></p>
+      <div class="cols">
+        <div>
+<div class="block">
+<h4 data-l="en">Context</h4><h4 data-l="ar">السياق</h4>
+<p data-l="en">The first Jusoor Forum at NIEPD brought together more than 120 leadership ambassadors from education departments across the Kingdom, alongside senior institute leadership, an international partner delegation from UCL, a judging committee and the practitioners presenting their work. The front rows were assigned by name and by rank; the rest was open seating. The plan lived in a Word table, every chair card was formatted by hand, and any change on the day meant redoing both.</p>
+<p data-l="ar">جمع ملتقى جسور الأول في المعهد أكثر من ١٢٠ من سفراء القيادة من إدارات التعليم في المناطق، إلى جانب قيادات المعهد، ووفد الشريك الدولي UCL، ولجنة التحكيم، وأصحاب الممارسات المقدَّمة. الصفوف الأمامية مخصّصة بالأسماء والرتب، والبقية إجلاس مفتوح. وكانت الخطة تُبنى في جدول Word وتُنسَّق بطاقة كل كرسي يدويًا، فأي تعديل يوم الملتقى يعني إعادة العمل مرتين.</p>
+</div>
+<div class="block">
+<h4 data-l="en">Approach</h4><h4 data-l="ar">الحل</h4>
+<p data-l="en">Upload an overhead photograph of the hall and click once on a chair; the tool samples that colour and detects every seat in the image. Rows and zones are drawn over the photograph, and attendees are placed by drag-and-drop or assigned automatically from a list pasted straight out of a spreadsheet.</p>
+<p data-l="ar">ترفع صورة علوية للقاعة وتنقر نقرة واحدة على كرسي، فتلتقط الأداة لونه وتكشف كل مقعد في الصورة. ثم تُرسم الصفوف وتُقسَّم المساحات فوق الصورة، ويُسنَد الحضور سحبًا أو تلقائيًا من قائمة تُلصق مباشرة من جدول بيانات.</p>
+</div>
+<div class="block">
+<h4 data-l="en">Details that made the difference</h4><h4 data-l="ar">التفاصيل التي صنعت الفرق</h4>
+<ul data-l="en"><li><strong>Logo library.</strong> Each uploaded logo has its shape extracted and is rendered white on dark backgrounds and blue on light ones, at a uniform visual height, and matched automatically to each attendee's organization.</li><li><strong>Preview on a real chair.</strong> Upload a photograph of an actual chair and drag four corner points to map the card onto the seat, so the card is seen as attendees will see it before anything is printed.</li><li><strong>Phone photographs.</strong> HEIC images from iPhone are decoded in the browser, so nobody has to convert files before uploading.</li><li><strong>Print control.</strong> Multiple card layouts and sizes, an ink-saving mode for the chart, and margin and orientation control.</li><li><strong>One file.</strong> The entire model — photograph, seats, names and design — saves to a single file that reopens later or passes to a colleague.</li></ul><ul data-l="ar"><li><strong>مكتبة الشعارات.</strong> يُستخرج شكل كل شعار مرفوع ويُلوَّن أبيض على الخلفيات الداكنة وأزرق على الفاتحة بارتفاع بصري موحّد، ويُسنَد لكل شخص شعار جهته تلقائيًا.</li><li><strong>معاينة على الكرسي.</strong> ترفع صورة لكرسي حقيقي وتسحب أربع نقاط لمطابقة زوايا البطاقة على المقعد، فترى البطاقة كما سيراها الحضور قبل الطباعة.</li><li><strong>صور الجوال.</strong> تُفك صيغة HEIC من الآيفون داخل المتصفح مباشرة، فلا يحتاج أحد إلى تحويل الصور قبل رفعها.</li><li><strong>ضبط الطباعة.</strong> أشكال ومقاسات متعددة للبطاقات، ووضع توفير حبر للمخطط، وضبط للهوامش واتجاه الصفحة.</li><li><strong>ملف واحد.</strong> يُحفظ النموذج كله — الصورة والمقاعد والأسماء والتصميم — في ملف واحد يُفتح لاحقًا أو يُمرَّر لزميل.</li></ul>
+</div>
+<div class="block">
+<h4 data-l="en">Outcome</h4><h4 data-l="ar">الأثر</h4>
+<p data-l="en">Used to prepare and run seating for the first Jusoor Forum in September 2026 — 120+ leadership ambassadors and guests, protocol-ordered front rows, and a named card on every assigned seat. A change on the morning of the event became a drag and a reprint instead of a rebuild.</p>
+<p data-l="ar">استُخدم في تجهيز وتشغيل إجلاس ملتقى جسور الأول في سبتمبر ٢٠٢٦ — أكثر من ١٢٠ من سفراء القيادة والضيوف، وصفوف أمامية مرتَّبة حسب البروتوكول، وبطاقة باسم كل مخصَّص له مقعد. وصار التعديل صباح الملتقى سحبةً وإعادة طباعة بدل إعادة بناء.</p>
+</div>
+        </div>
+        <aside class="factfile">
+          <dl>
+            <dt><span data-l="en">Role</span><span data-l="ar">الدور</span></dt>
+            <dd><span data-l="en">Design &amp; development</span><span data-l="ar">التصميم والتطوير</span></dd>
+            <dt><span data-l="en">Year</span><span data-l="ar">السنة</span></dt>
+            <dd><span data-l="en">2026</span><span data-l="ar">٢٠٢٦</span></dd>
+            <dt><span data-l="en">Context</span><span data-l="ar">السياق</span></dt>
+            <dd><span data-l="en">First Jusoor Forum, NIEPD auditorium — 120+ leadership ambassadors</span><span data-l="ar">ملتقى جسور الأول، مسرح المعهد<br>أكثر من ١٢٠ من سفراء القيادة</span></dd>
+            <dt><span data-l="en">Built with</span><span data-l="ar">التقنيات</span></dt>
+            <dd><ul class="tags"><li>JavaScript</li><li>Canvas 2D</li><li><span data-l="en">In-browser image processing</span><span data-l="ar">معالجة صور في المتصفح</span></li><li>HEIF/HEIC</li><li><span data-l="en">Print CSS</span><span data-l="ar">طباعة CSS</span></li></ul></dd>
+            <dt><span data-l="en">Note</span><span data-l="ar">ملاحظة</span></dt>
+            <dd><span data-l="en">The working copy holds real attendee records, so no live build of this tool is published.</span><span data-l="ar">النسخة العاملة تحتوي سجلات حضور فعلية، فلا تُنشر منها نسخة تشغيلية.</span></dd>
+          </dl>
+        </aside>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="approach">
+  <div class="wrap">
+    <div class="shead"><span class="no">03</span><h2><span data-l="en">How I work</span><span data-l="ar">كيف أعمل</span></h2></div>
+    <div class="principles"><div><span class="n">01</span><h3 data-l="en">Design for the constraint</h3><h3 data-l="ar">التصميم حول القيد</h3><p data-l="en">No server, no database, no network. Rather than treating that as an obstacle to negotiate around, I made it the organizing principle: local state, merge without central coordination, permissions checked in the data layer before any write.</p>
+<p data-l="ar">لا خادم ولا قاعدة بيانات ولا شبكة. بدل محاولة الالتفاف على القيد جعلته أساس المعمارية: حالة محلية، ودمج لا يحتاج تنسيقًا مركزيًا، وصلاحيات تُفحص في طبقة البيانات قبل أي كتابة.</p></div>
+<div><span class="n">02</span><h3 data-l="en">Measure before and after</h3><h3 data-l="ar">القياس قبل وبعد</h3><p data-l="en">The performance numbers on this page are measurements taken on the built product, not estimates. A change that cannot be shown to have improved something is a change I have not finished evaluating.</p>
+<p data-l="ar">أرقام الأداء في هذه الصفحة قياسات على المنتج المبني لا تقديرات. وأي تحسين لا يظهر أثره في رقم هو تحسين لم أنتهِ من تقييمه.</p></div>
+<div><span class="n">03</span><h3 data-l="en">Test what ships</h3><h3 data-l="ar">الاختبار على ما يُسلَّم</h3><p data-l="en">Tests run against the built package rather than a copy of the source, and browser tests measure rendered pixels. Acceptance criteria are generated from the tests themselves, so a rule cannot quietly lose its guard.</p>
+<p data-l="ar">الاختبارات تعمل على الحزمة المبنية نفسها لا على نسخة من المصدر، واختبارات المتصفح تقيس ما رُسم بالبكسل. ومصفوفات القبول تُولَّد من الاختبارات، فلا تفقد قاعدةٌ حارسها في صمت.</p></div>
+<div><span class="n">04</span><h3 data-l="en">Write the decisions down</h3><h3 data-l="ar">توثيق القرارات</h3><p data-l="en">150 architecture decisions recorded with the rejected alternative and the reason. Five documented releases with delivery packages and checksums, a handover note, a maintenance plan and user guides for each role — so the work survives me.</p>
+<p data-l="ar">١٥٠ قرارًا معماريًا موثقًا مع البديل المستبعد وسببه، وخمسة إصدارات موثقة بحزم تسليم وبصماتها، ومذكرة تسليم، وخطة صيانة، وأدلة مستخدم لكل دور — حتى يبقى العمل بعدي.</p></div></div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="shead"><span class="no">04</span><h2><span data-l="en">Experience &amp; education</span><span data-l="ar">الخبرة والتعليم</span></h2></div>
+    <div class="role"><div class="when"><span data-l="en">July 2026 — Present<br>Riyadh, Saudi Arabia</span><span data-l="ar">يوليو ٢٠٢٦ — الآن<br>الرياض، السعودية</span></div><div><h3 data-l="en">Administrative Development Specialist</h3><h3 data-l="ar">أخصائي تطوير إداري</h3><p data-l="en" class="org">Center for Educational Leadership Development — National Institute for Educational Professional Development (NIEPD)</p><p data-l="ar" class="org">مركز تطوير القيادات التعليمية — المعهد الوطني للتطوير المهني التعليمي</p><ul data-l="en"><li>Focal point between the institute and 16 regional education departments, coordinating with senior leadership and following up on cross-departmental initiatives.</li><li>Built a centralized leadership database in the first week — 16 departments and 80+ administrative roles — published as a password-protected internal site.</li><li>Designed and developed the ADKAR change management platform now used to run the program across 16 departments, some 80 senior leaders and a network of about 20,000 schools.</li><li>Analyzed and segmented records for approximately 4,000 individuals to target SMS and email reminder campaigns.</li><li>On the organizing team for the first Jusoor Forum: coded and packaged submitted practices for blind judging, and delivered seating, name cards and stage readiness for 120+ leadership ambassadors.</li><li>Redeveloped standardized work forms and templates; prepare official correspondence and executive meeting summaries with action items.</li></ul><ul data-l="ar"><li>نقطة الاتصال بين المعهد وست عشرة إدارة تعليم، والتنسيق مع القيادات ومتابعة المبادرات المشتركة.</li><li>بناء قاعدة بيانات القيادات في الأسبوع الأول — ١٦ إدارة وأكثر من ٨٠ منصبًا إداريًا — ونشرها موقعًا داخليًا محميًا بكلمة مرور.</li><li>تصميم وتطوير منصة إدارة التغيير ADKAR المستخدمة في إدارة البرنامج على ١٦ إدارة وقرابة ٨٠ قياديًا وشبكة تقارب ٢٠ ألف مدرسة.</li><li>تحليل وفرز بيانات قرابة ٤٬٠٠٠ شخص لاستهداف حملات الرسائل النصية والبريد التذكيري.</li><li>ضمن فريق تنظيم ملتقى جسور الأول: ترميز الممارسات وتجهيزها للتحكيم، والإجلاس وبطاقات الأسماء وجاهزية المسرح لأكثر من ١٢٠ من سفراء القيادة.</li><li>إعادة تطوير النماذج والقوالب الإدارية، وإعداد الخطابات الرسمية وملخصات الاجتماعات التنفيذية بإجراءاتها.</li></ul></div></div>
+<div class="role"><div class="when"><span data-l="en">2022 — 2026</span><span data-l="ar">٢٠٢٢ — ٢٠٢٦</span></div><div><h3 data-l="en">Bachelor of Business Administration</h3><h3 data-l="ar">بكالوريوس إدارة أعمال</h3><p data-l="en" class="org">Qassim University, Saudi Arabia</p><p data-l="ar" class="org">جامعة القصيم، السعودية</p><ul data-l="en"><li>Coursework: business planning, statistical analysis (SPSS), optimization and decision modeling (LINDO), management information systems, strategic management, operations management.</li><li>Economic feasibility study for a rock crusher project in Riyadh: NPV of SAR 1,432,486 at a 5.4% discount rate, IRR of 62.5%, payback in 2.5 years, with market strategy and risk mitigation.</li><li>Research seminar on accounting information systems: survey of 94 employees analyzed in SPSS, concluding that AIS dimensions measurably improve evaluation of alternatives and decision accuracy.</li></ul><ul data-l="ar"><li>مقررات: تخطيط الأعمال، والتحليل الإحصائي (SPSS)، ونمذجة القرار والأمثلية (LINDO)، ونظم المعلومات الإدارية، والإدارة الاستراتيجية، وإدارة العمليات.</li><li>دراسة جدوى اقتصادية لمشروع كسّارة في الرياض: صافي قيمة حالية ١٬٤٣٢٬٤٨٦ ريالًا بمعدل خصم ٥٫٤٪، ومعدل عائد داخلي ٦٢٫٥٪، واسترداد خلال سنتين ونصف، مع استراتيجية سوقية ومعالجة للمخاطر.</li><li>ندوة بحثية عن نظم المعلومات المحاسبية: تحليل استبانة ٩٤ موظفًا بـ SPSS، وخلصت إلى أن أبعاد النظام تحسّن تقييم البدائل ودقة القرار بأثر قابل للقياس.</li></ul></div></div>
+<div class="role"><div class="when"><span data-l="en">Credentials</span><span data-l="ar">الشهادات</span></div><div><h3 data-l="en">Certifications</h3><h3 data-l="ar">الشهادات والاعتمادات</h3><ul data-l="en"><li>Project Management Professional (PMP) preparation course, 35 PDUs — PM TRICKS</li><li>Principles of Artificial Intelligence — SDAIA (Saudi Data &amp; AI Authority)</li><li>Practicing Customer-Focused Communication — IBM</li><li>Arabic (native) · English (professional working proficiency)</li></ul><ul data-l="ar"><li>دورة الإعداد لشهادة إدارة المشاريع الاحترافية (PMP) — ٣٥ ساعة تطوير مهني — PM TRICKS</li><li>أساسيات الذكاء الاصطناعي — الهيئة السعودية للبيانات والذكاء الاصطناعي (سدايا)</li><li>التواصل المرتكز على العميل — IBM</li><li>العربية (اللغة الأم) · الإنجليزية (مستوى مهني)</li></ul></div></div>
+  </div>
+</section>
+</main>
+
+<footer class="contact" id="contact">
+  <div class="wrap">
+    <h2><span data-l="en">Open to conversations.</span><span data-l="ar">أهلًا بالتواصل.</span></h2>
+    <p><span data-l="en">I'm interested in work that sits where operations meet analysis and tooling — change management, business analysis, process automation. If that's the kind of problem on your desk, I'd be glad to talk.</span><span data-l="ar">يهمّني العمل الذي يلتقي فيه التشغيل بالتحليل وبناء الأدوات: إدارة التغيير، وتحليل الأعمال، وأتمتة العمليات. إن كان هذا نوع المسائل على طاولتك، يسعدني الحديث.</span></p>
+    <div class="links">
+      <a href="mailto:abdulaziz.au.alharbi@gmail.com">abdulaziz.au.alharbi@gmail.com</a>
+      <a href="https://www.linkedin.com/">LinkedIn</a>
+    </div>
+    <small><span data-l="en">Every screenshot on this site was taken from the platform running on demonstration data generated for this page and marked as such in the image. Department names are public institutions; no personal data — no names, emails or phone numbers — appears anywhere on this site or in any screenshot. © 2026 Abdulaziz Al-Harbi.</span><span data-l="ar">كل لقطة في هذه الصفحة مأخوذة من المنصة وهي تعمل على بيانات توضيحية أُعدّت لهذه الصفحة ومعلَّمة داخل الصورة نفسها. وأسماء إدارات التعليم جهات عامة، ولا تظهر في الموقع ولا في أي لقطة بيانات شخصية: لا أسماء ولا بريد ولا أرقام هواتف. © ٢٠٢٦ عبدالعزيز الحربي.</span></small>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root = document.documentElement, btn = document.getElementById('langBtn');
+  function setLang(l){
+    root.setAttribute('data-lang', l);
+    root.setAttribute('lang', l);
+    root.setAttribute('dir', l === 'ar' ? 'rtl' : 'ltr');
+    document.querySelectorAll('img[data-alt-'+l+']').forEach(function(i){ i.alt = i.getAttribute('data-alt-'+l); });
+    try { localStorage.setItem('lang', l); } catch(e){}
+  }
+  var saved = null;
+  try { saved = localStorage.getItem('lang'); } catch(e){}
+  setLang(saved || ((navigator.language||'').toLowerCase().indexOf('ar') === 0 ? 'ar' : 'en'));
+  btn.addEventListener('click', function(){ setLang(root.getAttribute('data-lang') === 'ar' ? 'en' : 'ar'); });
+
+  var links = Array.prototype.slice.call(document.querySelectorAll('.nav ul a'));
+  var map = {};
+  links.forEach(function(a){ var el = document.querySelector(a.getAttribute('href')); if(el) map[el.id] = a; });
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        var a = map[e.target.id]; if (!a) return;
+        if (e.isIntersecting){ links.forEach(function(l){ l.removeAttribute('aria-current'); }); a.setAttribute('aria-current','true'); }
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    Object.keys(map).forEach(function(id){ io.observe(document.getElementById(id)); });
+  }
+
+  var card = document.getElementById('demo-card');
+  if (card) fetch('demo/index.html', { method:'HEAD' }).then(function(r){ if (r.ok) card.classList.add('on'); }).catch(function(){});
+})();
+</script>
+</body>
+</html>
