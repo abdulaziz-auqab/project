@@ -59,7 +59,7 @@
     var host = $('#globe'), stage = $('#earthStage');
     var cnt = {}; DEP.forEach(function (d) { cnt[d[0]] = d[2]; });
     // موضع الاسم من النقطة حيث تتزاحم المدن: يسار أو يمين أو فوق، والباقي تحتها
-    var SIDE = { 'جدة': 'l', 'مكة المكرمة': 'b', 'الطائف': 'r', 'الشرقية': 'u', 'الأحساء': 'b', 'الحدود الشمالية': 'u', 'الجوف': 'l', 'تبوك': 'l', 'المدينة المنورة': 'l', 'جازان': 'l', 'نجران': 'r', 'عسير': 'l', 'الباحة': 'l' };
+    var SIDE = { 'Jeddah': 'l', 'Makkah': 'b', 'Taif': 'r', 'Eastern': 'u', 'Al-Ahsa': 'b', 'Northern Borders': 'u', 'Al-Jouf': 'l', 'Tabuk': 'l', 'Madinah': 'l', 'Jazan': 'l', 'Najran': 'r', 'Asir': 'l', 'Al-Baha': 'l' };
     var dots = DEPTS.map(function (d) { var n = cnt[d[0]] || 0; return { lat: d[3], lon: d[2], label: d[0], s: SIDE[d[0]] || 'b', r: (4 + Math.sqrt(n / 6747) * 9).toFixed(1) }; });
     var K = [
       [0, { lat: 8, lon: 34, aimLat: 15, aimLon: 30, bearing: 172, tilt: 4, dist: 3.6, fov: 30 }],
@@ -86,7 +86,7 @@
         var o = clamp(Math.min(a <= 0 ? 1 : (p - a) / f, (b - p) / f), 0, 1);
         s.style.opacity = o; s.style.translate = '0 ' + ((1 - o) * 24).toFixed(1) + 'px'; s.classList.toggle('on', o > 0);
       });
-      count.textContent = fmt(Math.round(30053 * smooth(clamp((p - 0.34) / 0.22, 0, 1))));
+      var q = smooth(clamp((p - 0.34) / 0.22, 0, 1)); count.textContent = fmt(Math.round(300 * q) * 100) + (q >= 0.999 ? '+' : '');
       prog.style.transform = 'scaleX(' + p.toFixed(3) + ')';
     }
     if (art && art.ok) art.pose(poseAt(MOTION ? 0 : 1), true);
@@ -132,7 +132,7 @@
 
   /* ---------- الأرقام: تعد مرة واحدة حين تظهر ---------- */
   $$('[data-count]').forEach(function (b) {
-    var to = +b.dataset.count, dec = +(b.dataset.dec || 0), suf = (b.dataset.pct ? '٪' : '') + (b.dataset.plus ? '+' : '');
+    var to = +b.dataset.count, dec = +(b.dataset.dec || 0), suf = (b.dataset.pct ? '%' : '') + (b.dataset.plus ? '+' : '');
     var show = function (v) { b.textContent = fmt(v, dec) + suf; };
     if (!MOTION || to === 0) { show(to); return; }
     var o = { v: 0 }; show(0);
@@ -153,7 +153,7 @@
   (function deps() {
     var DMAX = 7000;
     $('#deps').innerHTML = DEP.map(function (d) {
-      return '<div class="dep"><span class="nm">' + d[0] + '</span><div class="tr"><i class="base" style="width:' + (d[2] / DMAX * 100).toFixed(2) + '%"></i><i class="plc" style="width:' + (d[3] / DMAX * 100).toFixed(2) + '%"></i></div><span class="v"><b>' + fmt(d[3]) + '</b> / ' + fmt(d[2]) + '</span></div>';
+      return '<div class="dep"><span class="nm">' + d[0] + '</span><div class="tr"><i class="base" style="width:' + (d[2] / DMAX * 100).toFixed(2) + '%"></i><i class="plc" style="width:' + (d[3] / DMAX * 100).toFixed(2) + '%"></i></div><span class="v"><b>' + '~' + fmt(Math.round(d[3]/100)*100) + '</b> / ~' + fmt(Math.round(d[2]/100)*100) + '</span></div>';
     }).join('');
     grow($$('#deps .tr i'), '#deps', { stagger: 0.03 });
   })();
@@ -167,9 +167,9 @@
   });
   if (MOTION) G.fromTo('.browser', { rotateX: 18, scale: 0.88, opacity: 0.4, transformPerspective: 1600, transformOrigin: '50% 100%' }, { rotateX: 0, scale: 1, opacity: 1, ease: 'none', scrollTrigger: { trigger: '.browser', start: 'top 95%', end: 'top 35%', scrub: true } });
   (function adkar() {
-    var NAMES = ['الوعي', 'الرغبة', 'المعرفة', 'القدرة', 'التعزيز'], sc = [4, 3, 2, 3, 1], box = $('#adk'), out = $('#adkOut');
+    var NAMES = ['Awareness', 'Desire', 'Knowledge', 'Ability', 'Reinforcement'], sc = [4, 3, 2, 3, 1], box = $('#adk'), out = $('#adkOut');
     box.innerHTML = NAMES.map(function (n, i) {
-      return '<div class="stg" data-i="' + i + '"><h4>' + n + '</h4><div class="sc"><button type="button" data-d="1" aria-label="ارفع درجة ' + n + '">+</button><b></b><button type="button" data-d="-1" aria-label="اخفض درجة ' + n + '">−</button></div><span class="tg"></span></div>';
+      return '<div class="stg" data-i="' + i + '"><h4>' + n + '</h4><div class="sc"><button type="button" data-d="1" aria-label="Raise ' + n + '">+</button><b></b><button type="button" data-d="-1" aria-label="Lower ' + n + '">−</button></div><span class="tg"></span></div>';
     }).join('');
     function paint() {
       var stuck = sc.findIndex(function (v) { return v < 3; });
@@ -177,9 +177,9 @@
         $('b', s).textContent = sc[i];
         $('[data-d="1"]', s).disabled = sc[i] >= 5; $('[data-d="-1"]', s).disabled = sc[i] <= 1;
         s.classList.toggle('stuck', i === stuck); s.classList.toggle('wait', stuck >= 0 && i > stuck);
-        $('.tg', s).textContent = i === stuck ? 'نقطة التعثر' : stuck >= 0 && i > stuck ? 'تنتظر' : 'عبرت';
+        $('.tg', s).textContent = i === stuck ? 'Blocking point' : stuck >= 0 && i > stuck ? 'Waiting' : 'Passed';
       });
-      out.textContent = stuck < 0 ? 'لا تعثر: كل المراحل عند 3 أو أكثر، فتنتقل الإدارة إلى المتابعة.' : 'تعمل الإدارة الآن على «' + NAMES[stuck] + '»، والمراحل بعدها تنتظر حتى تعالجها.';
+      out.textContent = stuck < 0 ? 'No blocker: every stage is at 3 or above, so the directorate moves to follow-up.' : 'This directorate is now working on "' + NAMES[stuck] + '"; later stages wait until it is resolved.';
     }
     box.addEventListener('click', function (e) {
       var b = e.target.closest('button'); if (!b) return;
@@ -191,7 +191,7 @@
   /* ---------- الانتداب: الأسابيع والمسارات ---------- */
   (function weeks() {
     var svg = $('#weeks'), W0 = 30, W1 = 890, H0 = 230, MAXV = 30, bw = (W1 - W0) / WEEKS.length, bars = [];
-    var xAt = function (i) { return W1 - (i + 1) * bw; };
+    var xAt = function (i) { return W0 + i * bw; };
     el('line', { x1: W0, x2: W1, y1: H0, y2: H0, class: 'ax' }, svg);
     WEEKS.forEach(function (v, i) {
       var x = xAt(i) + bw * 0.18, h = Math.max(v / MAXV * 170, v ? 2 : 0), peak = i === 5 || i === 6;
@@ -199,12 +199,12 @@
       el('text', { x: x + bw * 0.32, y: H0 - h - 8, 'text-anchor': 'middle', class: 'v' }, svg).textContent = v;
       el('text', { x: x + bw * 0.32, y: H0 + 22, 'text-anchor': 'middle' }, svg).textContent = i + 1;
     });
-    [[0, 4, 'أكتوبر'], [5, 9, 'نوفمبر'], [10, 13, 'ديسمبر']].forEach(function (m) {
+    [[0, 4, 'Oct'], [5, 9, 'Nov'], [10, 13, 'Dec']].forEach(function (m) {
       el('text', { x: (xAt(m[0]) + bw + xAt(m[1])) / 2, y: H0 + 50, 'text-anchor': 'middle' }, svg).textContent = m[2];
     });
     var a = xAt(6) + bw * 0.1, b = xAt(5) + bw * 0.9, by = H0 - 28 / MAXV * 170 - 34;
     var br = el('path', { d: 'M' + a + ',' + (by + 8) + ' V' + by + ' H' + b + ' V' + (by + 8), class: 'br' }, svg);
-    var note = el('text', { x: (a + b) / 2, y: by - 10, 'text-anchor': 'middle', class: 'note' }, svg); note.textContent = 'الأسبوعان 6 و7: 55 مهمة (43٪)';
+    var note = el('text', { x: (a + b) / 2, y: by - 10, 'text-anchor': 'middle', class: 'note' }, svg); note.textContent = 'Weeks 6–7: about 55 missions (over 40%)';
     if (MOTION) {
       G.from(bars, { scaleY: 0, transformOrigin: '50% 100%', duration: 0.9, ease: 'power3.out', stagger: 0.05, scrollTrigger: { trigger: svg, start: 'top 80%', once: true } });
       G.from([br, note], { opacity: 0, y: 10, duration: 0.6, delay: 0.9, scrollTrigger: { trigger: svg, start: 'top 80%', once: true } });
@@ -233,7 +233,7 @@
   (function net() {
     var svg = $('#net'), HUB = P(46.72, 24.71); el('path', { d: KSA, class: 'ksa' }, svg);
     var g1 = el('g', {}, svg), g2 = el('g', {}, svg), g3 = el('g', {}, svg), links = [], nodes = [];
-    var LBL = { 'جدة': [-12, -4, 'start'], 'مكة المكرمة': [0, 24, 'middle'], 'الطائف': [10, -10, 'end'], 'نجران': [12, 5, 'end'], 'الباحة': [12, 5, 'end'], 'عسير': [12, 5, 'end'], 'جازان': [-12, 5, 'start'], 'الأحساء': [-12, 5, 'start'], 'الشرقية': [12, 5, 'end'] };
+    var LBL = { 'Jeddah': [-12, -4, 'start'], 'Makkah': [0, 24, 'middle'], 'Taif': [10, -10, 'end'], 'Najran': [12, 5, 'end'], 'Al-Baha': [12, 5, 'end'], 'Asir': [12, 5, 'end'], 'Jazan': [-12, 5, 'start'], 'Al-Ahsa': [-12, 5, 'start'], 'Eastern': [12, 5, 'end'] };
     DEPTS.forEach(function (d, i) {
       if (!i) return;
       var p = P(d[2], d[3]), o = LBL[d[0]] || [0, -12, 'middle'];
@@ -242,11 +242,11 @@
       el('text', { x: p[0] + o[0], y: p[1] + o[1], 'text-anchor': o[2] }, g3).textContent = d[0];
     });
     el('circle', { cx: HUB[0], cy: HUB[1], r: 11, class: 'hub' }, g2);
-    el('text', { x: HUB[0], y: HUB[1] + 32, 'text-anchor': 'middle', class: 'h' }, g3).textContent = 'المعهد · الرياض';
+    el('text', { x: HUB[0], y: HUB[1] + 32, 'text-anchor': 'middle', class: 'h' }, g3).textContent = 'HQ · Riyadh';
     drawOn(links, svg);
     if (MOTION) G.from(nodes, { scale: 0, transformOrigin: '50% 50%', duration: 0.5, stagger: 0.04, ease: 'back.out(2)', scrollTrigger: { trigger: svg, start: 'top 60%', once: true } });
 
-    var mx = $('#mx'), h = '<span></span>' + ROLES.map(function (r) { return '<span class="h">' + r[0] + '</span>'; }).join('');
+    var mx = $('#mx'), h = '<span></span>' + ROLES.map(function (r) { return '<span class="h">' + r[1] + '</span>'; }).join('');
     DEPTS.forEach(function (d) { h += '<span class="rn">' + d[0] + '</span>'; for (var j = 0; j < 7; j++) h += '<i class="c"></i>'; });
     mx.innerHTML = h;
     var cells = $$('.c', mx);
@@ -261,7 +261,7 @@
   (function hall() {
     var svg = $('#hall'), seats = [];
     el('rect', { x: 300, y: 14, width: 300, height: 46, rx: 10, class: 'stage' }, svg);
-    el('text', { x: 450, y: 43, 'text-anchor': 'middle', class: 'stage-t' }, svg).textContent = 'المنصة';
+    el('text', { x: 450, y: 43, 'text-anchor': 'middle', class: 'stage-t' }, svg).textContent = 'Stage';
     for (var r = 0; r < 9; r++) for (var s = 0; s < 18; s++) {
       if (s === 8 || s === 9) continue;   // الممر
       var x = 75 + s * 42 + (s > 9 ? -6 : s < 8 ? 6 : 0), y = 100 + r * 36;
@@ -282,15 +282,15 @@
 
   /* ---------- البريد ---------- */
   $('#copyMail').addEventListener('click', function () {
-    var b = this; navigator.clipboard && navigator.clipboard.writeText('abdulaziz.au.alharbi@gmail.com').then(function () { b.textContent = 'نسخت البريد'; setTimeout(function () { b.textContent = 'انسخ البريد'; }, 2000); });
+    var b = this; navigator.clipboard && navigator.clipboard.writeText('abdulaziz.au.alharbi@gmail.com').then(function () { b.textContent = 'Copied'; setTimeout(function () { b.textContent = 'Copy email'; }, 2000); });
   });
 
   /* ---------- مصادر الصور ---------- */
   if (window.CREDITS && CREDITS.length) {
-    var cr = $('#credits'); cr.append('الصور: ');
+    var cr = $('#credits'); cr.append('Photos: ');
     CREDITS.forEach(function (c, i) {
       var a = document.createElement('a'); a.href = c.url; a.target = '_blank'; a.rel = 'noopener'; a.textContent = c.author;
-      cr.append(a, ' (' + c.license + ')' + (i < CREDITS.length - 1 ? '، ' : '.'));
+      cr.append(a, ' (' + c.license + ')' + (i < CREDITS.length - 1 ? ', ' : '.'));
     });
   }
 
